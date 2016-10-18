@@ -7,8 +7,6 @@ var mongoose = require('mongoose')
 
 var app = express()
 
-console.log(process.env.NODE.ENV)
-
 if (process.env.NODE_ENV === 'production') {
   mongoose.connect('mongodb://terencelimsayjian:looneytunes92@ds027295.mlab.com:27295/ter-do-list')
 } else {
