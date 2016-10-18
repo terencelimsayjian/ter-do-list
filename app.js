@@ -7,7 +7,13 @@ var mongoose = require('mongoose')
 
 var app = express()
 
-mongoose.connect('mongodb://localhost/to-do-list')
+console.log(process.env.NODE.ENV)
+
+if (process.env.NODE_ENV === 'production') {
+  mongoose.connect('mongodb://terencelimsayjian:looneytunes92@ds027295.mlab.com:27295/ter-do-list')
+} else {
+  mongoose.connect('mongodb://localhost/to-do-list')
+}
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
