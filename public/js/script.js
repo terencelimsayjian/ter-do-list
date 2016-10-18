@@ -7,14 +7,12 @@ $(document).ready(function () {
 
     var formdata = $(this).serializeArray()
 
-    console.log(formdata)
-
     $.ajax({
       type: 'POST',
       url: '/users',
       data: formdata
     }).done(function () {
-      console.log('done!')
+      $('ul').append('<li>' + formdata + '</li>')
     })
   })
 })
